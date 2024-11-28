@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Satellite to Map Image Display</title>
+</head>
+
+<body>
+    <h1>Upload an Image</h1>
+    <form action="/" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Upload">
+    </form>
+    {% if in_image and out_image %}
+    <h2>Satellite Image:</h2>
+    <img src="data:image/jpeg;base64,{{ in_image }}">
+    <h2>Generated map</h2>
+    <img src="data:image/jpeg;base64,{{ out_image}}">
+    {% endif %} 
+</body>
+
+</html>
